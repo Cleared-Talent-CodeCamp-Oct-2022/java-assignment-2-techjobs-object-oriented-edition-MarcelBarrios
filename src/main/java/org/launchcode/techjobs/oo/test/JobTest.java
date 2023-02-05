@@ -62,4 +62,23 @@ public class JobTest {
         assertFalse(obj4.equals(obj5));
     }
 
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job obj6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        int length = obj6.toString().length();
+
+        assertEquals(obj6.toString().charAt(0), '\n');
+        assertEquals(obj6.toString().charAt(length - 1), '\n');
+    }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job obj7 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("\nID: " + obj7.getId() + "\nName: " + obj7.getName() + "\nEmployer: " + obj7.getEmployer() +
+                "\nLocation: " + obj7.getLocation() + "\nPosition Type: " + obj7.getPositionType() + "\nCore Competency: "
+                + obj7.getCoreCompetency() + "\n", obj7.toString());
+    }
 }
