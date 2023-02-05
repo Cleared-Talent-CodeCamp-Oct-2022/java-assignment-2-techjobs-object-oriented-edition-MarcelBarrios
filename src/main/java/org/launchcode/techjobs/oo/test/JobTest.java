@@ -45,10 +45,10 @@ public class JobTest {
         assertTrue(obj3.getCoreCompetency() instanceof CoreCompetency);
 
         assertEquals(obj3.getName(), "Product tester");
-        assertEquals(obj3.getEmployer(), "ACME");
-        assertEquals(obj3.getLocation(), "Desert");
-        assertEquals(obj3.getPositionType(), "Quality control");
-        assertEquals(obj3.getCoreCompetency(), "Persistence");
+        assertEquals(obj3.getEmployer().toString(), "ACME");
+        assertEquals(obj3.getLocation().toString(), "Desert");
+        assertEquals(obj3.getPositionType().toString(), "Quality control");
+        assertEquals(obj3.getCoreCompetency().toString(), "Persistence");
 
     }
 
